@@ -44,5 +44,22 @@ namespace SciLors_Mashed_File_Extractor.FileFormats.PIZ {
                 bytesToRead -= n;
             }
         }
+
+        public void extractFile(FileHeader fileHeader, string targetPath) {
+            using (FileStream streamRead = new FileStream(filePath, FileMode.Open, FileAccess.Read)) {
+                using (FileStream streamWrite = new FileStream(targetPath, FileMode.Create, FileAccess.Write)) {
+                    streamRead.Position = fileHeader.fileOffset;
+                    copyStream(streamRead, streamWrite, fileHeader.fileSize);
+                }
+            }
+        }
+        private void copyStream(Stream input, Stream output, int bytes) {
+            byte[] buffer = new byte[32768];
+            int read;
+            while (bytes > 0 && (read = input.Read(buffer, 0, Math.Min(buffer.Length, bytes))) > 0) {
+                output.Write(buffer, 0, read);
+                bytes -= read;
+            }
+        }
     }
 }

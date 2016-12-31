@@ -1,7 +1,7 @@
 ﻿<Window x:Class="SciLors_Mashed_File_Extractor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SciLor's Mashed File Extractor" Height="409" Width="742" Name="wndMain">
+        Title="SciLor's Mashed File Extractor" Height="536" Width="1043" Name="wndMain">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="301*" />
@@ -15,7 +15,8 @@
             </MenuItem>
         </Menu>
         <DockPanel Margin="0,25,0,17" Name="dckMain">
-            <TreeView Name="tvwContent" Width="330" HorizontalAlignment="Left" />
+            <TreeView Name="tvwContent" Width="330" HorizontalAlignment="Left">
+            </TreeView>
         </DockPanel>
     </Grid>
 </Window>
