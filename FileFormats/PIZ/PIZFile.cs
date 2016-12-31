@@ -23,10 +23,10 @@ namespace SciLors_Mashed_File_Extractor.FileFormats.PIZ {
                 stream.Position = MagicNumbers.OFFSET_FILE_HEADER; //Jump to File Table
                 byte[] headerBytes = new byte[MagicNumbers.OFFSET_FILE_HEADER_SIZE];
                 files = new List<FileHeader>();
-                while (true) {
+                for (int i = 0; i<fileSignature.fileCount; i++) {
                     readBytesSafe(stream, headerBytes);
-                    if (headerBytes[0] == 0x00)
-                        break;
+                    //if (headerBytes[0] == 0x00)
+                     //   break;
                     files.Add(new FileHeader(headerBytes));
                 }
 

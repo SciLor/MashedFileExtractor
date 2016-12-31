@@ -10,7 +10,7 @@ namespace SciLors_Mashed_File_Extractor.FileFormats.PIZ {
             return MagicNumbers.OFFSET_SECOND_FILE_SIGNATURE_APPENDIX + MagicNumbers.FILE_SIGNATURE_APPENDIX2_LENGTH;
             }
         }
-        public byte unknownInfo { get; set; }
+        public byte fileCount { get; set; }
         public Appendix2Enum appendix2 { get; set; }
 
         private byte[] signature;
@@ -54,7 +54,7 @@ namespace SciLors_Mashed_File_Extractor.FileFormats.PIZ {
             return pos + 1;
         }
         private void extraxtUnknownInfo() {
-            unknownInfo = signature[MagicNumbers.OFFSET_UNKNOWN];
+            fileCount = signature[MagicNumbers.OFFSET_FILE_COUNT];
         }
         private void checkAndExtractSecondAppendix() {
             appendix2 = Appendix2Enum.NONE;

@@ -10,7 +10,7 @@ namespace SciLors_Mashed_File_Extractor.FileFormats.PIZ {
 
         public const int FILE_SIGNATURE_APPENDIX2_LENGTH = 4;
 
-        public const int OFFSET_UNKNOWN = 0x08; //Random Number?
+        public const int OFFSET_FILE_COUNT = 0x08;
         public const int OFFSET_SECOND_FILE_SIGNATURE_APPENDIX = 0x0D; //0x00 or 0xCC
         public const int OFFSET_FILE_HEADER = 0x800;
         public const int OFFSET_FILE_HEADER_SIZE = 0x80;
