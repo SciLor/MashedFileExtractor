@@ -36,8 +36,6 @@ namespace SciLors_Mashed_File_Extractor {
                     TreeViewItem baseItem = new TreeViewItem();
                     baseItem.Tag = file;
                     baseItem.Header = file.fileName + " ["
-                        + String.Format("Unknown=0x{0:X2}", file.fileSignature.unknownInfo)
-                        + ","
                         + String.Format("Appendix2=0x{0:X2}", (byte)file.fileSignature.appendix2)
                         + "]";
 
